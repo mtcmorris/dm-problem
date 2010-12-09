@@ -17,6 +17,6 @@ range.to_a.each {|i|
   if duration < 0
     puts "#{i.to_s.rjust(5)}: !"
   else
-    puts "#{i.to_s.rjust(5)}: #{duration.to_s.ljust(9)[0..3]} #{(['-'] * (duration * scale).floor).join}"
+    puts "#{i.to_s.rjust(5)}: #{duration.to_s.ljust(9)[0..4]} #{(['-'] * (duration * scale).floor).join}"
   end
 }

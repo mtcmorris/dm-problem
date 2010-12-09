@@ -15,4 +15,4 @@ To replicate
 
         ruby script/ben-schmark.rb 
   
-Over many hunderds of requests, the response time increases
+Over many hunderds of requests, the response time increases.  This does not happen with just activerecord leading me to think it is a problem with dm-rails.  I've tested with dm-sqlite-adapter and with the postgres adapter - they both exhibit the same result of slowing down the dev environment over time.
