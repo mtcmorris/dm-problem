@@ -1,0 +1,4 @@
+development:
+  adapter: postgresql
+  database: dmproblem_dev
+  username: <%= `whoami` %>
