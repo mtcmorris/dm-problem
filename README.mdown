@@ -3,16 +3,16 @@ The Problem
 
 Requests to the rails stack (with dm-rails, dm-postgres) in development *irrespective* as to whether a model is queried, cause the next response to be slightly slower.
 
-This is a very barebones app -> check the Gemfile and the one model.
+The problem is exacerbated in larger apps.  On a larger app (20 models), we're noticing respones times in dev increase cumulatively by +20msec which adds up very quickly.
 
-The problem is exacerbated in larger apps.
+This is a very barebones app -> check the Gemfile and the one model.
 
 To replicate
 ------------
 
-Run @ben\_h's schmark which runs many requests
+1.  Clone, db:create, db:automigrate and start the app.
+2.  Run @ben\_h's schmark which runs many requests against localhost:3000
+
+      ruby script/ben-schmark.rb 
   
-  ruby script/ben-schmark.rb 
-  
-Over many hunderds of requests, the response time increases.  
-On a larger app (20 models), we're noticing requests to dev increase 20msec in duration each response which adds up very quickly.
+Over many hunderds of requests, the response time increases
